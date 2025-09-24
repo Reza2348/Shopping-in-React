@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router"; // <- حتماً باید این را اضافه کنید
+import { Navigate } from "react-router";
 
 const ProtectedRoute = ({ children, requireAuth = true }) => {
   const isAuthenticated = Boolean(localStorage.getItem("user"));

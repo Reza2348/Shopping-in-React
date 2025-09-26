@@ -1,10 +1,10 @@
 import { createBrowserRouter, Outlet } from "react-router";
-import Products from "./components/pages/Products";
+import Products from "./components/pages/Products/Products";
 import Header from "./components/shared/index";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/Home/Home";
 import Cart from "./components/Cart/Cart";
-import SignUp from "./components/pages/SignUp";
-import Login from "./components/pages/Login";
+import SignUp from "./components/pages/SignUp/SignUp";
+import Login from "./components/pages/Login/Login";
 
 const MainLayout = () => (
   <>

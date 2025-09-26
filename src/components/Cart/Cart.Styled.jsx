@@ -4,15 +4,23 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 1024px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   font-family: "Roboto", sans-serif;
+
+  @media (max-width: 639px) {
+    padding: 0.5rem 1rem;
+  }
 `;
 
 export const Title = styled.h1`
-  font-size: 2rem; /* بزرگ‌تر */
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 639px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -47,12 +55,22 @@ export const ItemInfo = styled.div`
     height: 6rem;
     object-fit: cover;
     border-radius: 0.5rem;
+
+    @media (max-width: 639px) {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
   }
 `;
 
 export const ItemText = styled.div`
   p {
     margin: 0.25rem 0;
+    font-size: 1.125rem;
+
+    @media (max-width: 639px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -92,19 +110,28 @@ export const QuantityControls = styled.div`
     &:hover {
       background-color: #d1d5db;
     }
+
+    @media (max-width: 639px) {
+      padding: 0.2rem 0.5rem;
+      font-size: 1rem;
+    }
   }
 
   span {
     font-weight: 500;
-    font-size: 1.25rem; /* بزرگ‌تر */
+    font-size: 1.25rem;
+
+    @media (max-width: 639px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 
 export const RemoveButton = styled.button`
   margin-top: 1rem;
   color: #dc2626;
-  font-weight: 700; /* پررنگ‌تر */
-  font-size: 1.25rem; /* بزرگ‌تر */
+  font-weight: 700;
+  font-size: 1.25rem;
   border: none;
   background: none;
   cursor: pointer;
@@ -117,6 +144,10 @@ export const RemoveButton = styled.button`
 
   &:hover {
     color: #b91c1c;
+  }
+
+  @media (max-width: 639px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -132,6 +163,10 @@ export const TotalWrapper = styled.div`
   span {
     font-size: 1.25rem;
     font-weight: 600;
+
+    @media (max-width: 639px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 
@@ -141,8 +176,8 @@ export const ClearButton = styled.button`
   background-color: #dc2626;
   color: #fff;
   padding: 0.75rem;
-  font-size: 1.25rem; /* بزرگ‌تر */
-  font-weight: 700; /* پررنگ */
+  font-size: 1.25rem;
+  font-weight: 700;
   border-radius: 0.5rem;
   cursor: pointer;
   border: none;
@@ -151,18 +186,33 @@ export const ClearButton = styled.button`
   &:hover {
     background-color: #b91c1c;
   }
+
+  @media (max-width: 639px) {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
 `;
 
 export const EmptyMessage = styled.p`
   padding: 2rem;
   text-align: center;
   color: #6b7280;
-  font-size: 1.5rem; /* بزرگ‌تر */
+  font-size: 1.5rem;
+
+  @media (max-width: 639px) {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
 `;
 
 export const LoadingMessage = styled.p`
   padding: 2rem;
   text-align: center;
-  color: #9ca3af; /* خاکستری */
+  color: #9ca3af;
   font-size: 1.5rem;
+
+  @media (max-width: 639px) {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
 `;

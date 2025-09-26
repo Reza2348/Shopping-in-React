@@ -36,10 +36,28 @@ const Products = () => {
   }, []);
 
   if (isLoading)
-    return <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading...</p>;
+    return (
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "2rem",
+          fontSize: "1.5rem", // بزرگ‌تر کردن فونت
+        }}
+      >
+        Loading...
+      </p>
+    );
+
   if (isError)
     return (
-      <p style={{ textAlign: "center", marginTop: "2rem", color: "red" }}>
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "2rem",
+          color: "red",
+          fontSize: "1.5rem", // بزرگ‌تر کردن فونت
+        }}
+      >
         Error receiving data
       </p>
     );

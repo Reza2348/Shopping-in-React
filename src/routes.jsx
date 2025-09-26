@@ -5,7 +5,6 @@ import Home from "./components/pages/Home";
 import Cart from "./components/Cart/Cart";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
-// import ProtectedRoute from "./components/Auth/ProtectedRoute";
 
 const MainLayout = () => (
   <>
@@ -30,9 +29,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
       {
         path: "products",
-        element: (
-          <Products />
-        ),
+        element: <Products />,
       },
     ],
   },

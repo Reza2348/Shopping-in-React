@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Link, useNavigate } from "react-router";
-import axios from "axios";
+import { client } from "../../lib/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -33,10 +33,10 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post(
-        "https://strapi-store-server.onrender.com/api/auth/local",
-        { identifier: data.email, password: data.password }
-      );
+      const response = await client.post("/api/auth/local", {
+        identifier: data.email,
+        password: data.password,
+      });
 
       localStorage.setItem("token", response.data.jwt);
       localStorage.setItem("user", JSON.stringify(response.data.user));

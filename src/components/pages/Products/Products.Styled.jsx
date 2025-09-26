@@ -18,6 +18,12 @@ export const ProductsGrid = styled.div`
   }
 `;
 
+export const Message = styled.p`
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: ${(props) => props.color || "gray"};
+`;
 export const ProductCard = styled.div`
   border: 1px solid #e5e7eb;
   padding: 1rem;

@@ -34,7 +34,6 @@ const Products = () => {
     };
     getProducts();
   }, []);
-
   if (isLoading)
     return (
       <p
@@ -55,8 +54,8 @@ const Products = () => {
         style={{
           textAlign: "center",
           marginTop: "2rem",
-          color: "red",
           fontSize: "1.5rem",
+          color: "red",
           color: "red",
         }}
       >

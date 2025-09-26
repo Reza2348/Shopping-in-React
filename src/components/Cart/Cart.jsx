@@ -1,3 +1,4 @@
+// src/components/Cart/Cart.jsx
 import React from "react";
 import { useCart } from "../context/CartContext";
 import {
@@ -13,15 +14,25 @@ import {
   TotalWrapper,
   ClearButton,
   EmptyMessage,
+  LoadingMessage,
 } from "./Cart.Styled";
 
-const Cart = () => {
+const Cart = ({ isLoading, isError }) => {
   const { items, removeItem, increaseQty, decreaseQty, clearCart } = useCart();
 
   const totalPrice = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  if (isLoading) return <LoadingMessage>در حال بارگذاری...</LoadingMessage>;
+
+  if (isError)
+    return (
+      <EmptyMessage style={{ color: "red" }}>
+        خطا در دریافت اطلاعات!
+      </EmptyMessage>
+    );
 
   if (items.length === 0)
     return <EmptyMessage>سبد خرید خالی است.</EmptyMessage>;

@@ -19,7 +19,7 @@ const Home = () => {
           to="/products"
           className="bg-blue-500 text-white px-6 py-3 rounded-md text-sm font-semibold transition duration-300"
         >
-          Explore Now
+          Buy now
         </Link>
       </div>
 

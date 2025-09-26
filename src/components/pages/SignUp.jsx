@@ -6,7 +6,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// ✅ تعریف schema برای اعتبارسنجی
 const signUpSchema = z.object({
   username: z.string().min(3, "Username must be at least 3 characters."),
   email: z.string().email("Email is invalid."),
@@ -119,7 +118,7 @@ const SignUp = () => {
 
         <div className="text-center mt-4">
           <p>
-            Already have an account?{" "}
+            Already have an account?
             <Link to="/login" className="text-[#F47458]">
               Login
             </Link>

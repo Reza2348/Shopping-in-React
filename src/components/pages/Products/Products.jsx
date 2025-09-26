@@ -41,7 +41,8 @@ const Products = () => {
         style={{
           textAlign: "center",
           marginTop: "2rem",
-          fontSize: "1.5rem", // بزرگ‌تر کردن فونت
+          fontSize: "1.5rem",
+          color: "gray",
         }}
       >
         Loading...
@@ -55,7 +56,8 @@ const Products = () => {
           textAlign: "center",
           marginTop: "2rem",
           color: "red",
-          fontSize: "1.5rem", // بزرگ‌تر کردن فونت
+          fontSize: "1.5rem",
+          color: "red",
         }}
       >
         Error receiving data

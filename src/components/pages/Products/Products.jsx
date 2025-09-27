@@ -11,6 +11,8 @@ import {
   ColorCircle,
   AddButton,
 } from "./Products.Styled";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -34,65 +36,68 @@ const Products = () => {
     };
     getProducts();
   }, []);
-  if (isLoading)
-    return (
-      <p
-        style={{
-          textAlign: "center",
-          marginTop: "2rem",
-          fontSize: "1.5rem",
-          color: "gray",
-        }}
-      >
-        Loading...
-      </p>
-    );
 
-  if (isError)
+  if (isLoading || isError) {
     return (
       <p
         style={{
           textAlign: "center",
           marginTop: "2rem",
           fontSize: "1.5rem",
-          color: "red",
-          color: "red",
+          color: isError ? "red" : "gray",
         }}
       >
-        Error receiving data
+        {isError ? "Error receiving data" : "Loading..."}
       </p>
     );
+  }
 
   return (
-    <ProductsGrid>
-      {products.map((product) => {
-        const { title, company, description, category, image, price, colors } =
-          product.attributes;
+    <>
+      <ProductsGrid>
+        {products.map((product) => {
+          const {
+            title,
+            company,
+            description,
+            category,
+            image,
+            price,
+            colors,
+          } = product.attributes;
 
-        return (
-          <ProductCard key={product.id}>
-            {image && <ProductImage src={image} alt={title} />}
-            <ProductTitle>{title}</ProductTitle>
-            <ProductInfo>Company: {company}</ProductInfo>
-            <ProductInfo>Price: ${price}</ProductInfo>
-            <ProductInfo>{description}</ProductInfo>
-            <ProductInfo>
-              Category: <strong>{category}</strong>
-            </ProductInfo>
+          return (
+            <ProductCard key={product.id}>
+              {image && <ProductImage src={image} alt={title} />}
+              <ProductTitle>{title}</ProductTitle>
+              <ProductInfo>Company: {company}</ProductInfo>
+              <ProductInfo>Price: ${price}</ProductInfo>
+              <ProductInfo>{description}</ProductInfo>
+              <ProductInfo>
+                Category: <strong>{category}</strong>
+              </ProductInfo>
 
-            {colors?.length > 0 && (
-              <ColorsWrapper>
-                {colors.map((color, index) => (
-                  <ColorCircle key={index} color={color} />
-                ))}
-              </ColorsWrapper>
-            )}
-
-            <AddButton onClick={() => addItem(product)}>Add to cart</AddButton>
-          </ProductCard>
-        );
-      })}
-    </ProductsGrid>
+              {colors?.length > 0 && (
+                <ColorsWrapper>
+                  {colors.map((color, index) => (
+                    <ColorCircle key={index} color={color} />
+                  ))}
+                </ColorsWrapper>
+              )}
+              <AddButton
+                onClick={() => {
+                  addItem(product);
+                  toast.success("add to cart");
+                }}
+              >
+                Add to cart
+              </AddButton>
+            </ProductCard>
+          );
+        })}
+      </ProductsGrid>
+      <ToastContainer position="top-right" autoClose={3000} />
+    </>
   );
 };
 

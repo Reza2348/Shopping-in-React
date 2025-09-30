@@ -71,6 +71,18 @@ export const CartIconWrapper = styled.div`
   }
 `;
 
+export const Badge = styled.span`
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+`;
+
 export const MobileMenuButton = styled.button`
   background: none;
   border: none;
@@ -109,5 +121,5 @@ export const MobileNavLink = styled(NavLink)`
   display: block;
   padding: 0.75rem 0;
   text-align: center;
-  text-decoration: none; /* دوباره تاکید */
+  text-decoration: none;
 `;
